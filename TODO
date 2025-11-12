@@ -1,0 +1,63 @@
+ 
+🧩 Full-Stack Web App Assignment – Real-Time CSV Browser with Role-Based Access Control
+Goal
+Build a small full-stack web app that allows users to sign up, log in, and browse CSV files uploaded by an admin.
+The app should feature real-time updates (new files appear instantly for all connected users) and role-based access control (RBAC) enforced via JWT.
+
+🧱 Tech Stack
+Frontend: React (any framework or toolchain — Vite, CRA, Next.js, etc.)
+Backend: FastAPI (Python)
+Database: PostgreSQL
+Auth: JWT-based authentication with role scopes (admin, user)
+Preferred Tools: Using AI tools (ChatGPT, Cursor, Copilot, Claude Code, etc.) during development is encouraged and expected.
+
+🏗️ Main Functionality
+1. Authentication & Roles
+Users can sign up and log in using username & password.
+On signup, users are assigned the "user" role by default.
+The admin user(s) can be manually seeded or flagged in the database.
+JWT tokens include a role claim (e.g., {"sub": "tom", "role": "admin"}).
+Access to routes is protected via FastAPI dependencies:
+admin endpoints → upload/delete CSVs, manage users.
+user endpoints → list and view CSVs only.
+Make sure to use FastAPI dependencies.
+
+2. Admin Panel
+Admin can:
+Log in with JWT.
+Upload new CSV files.
+See a list of uploaded files (name, size, upload date).
+Delete any CSV file.
+View all registered users and delete them if needed.
+When the admin uploads or deletes a CSV file:
+All connected clients (including other browser tabs) receive the update in real time via WebSocket.
+
+3. User Panel
+Regular users can:
+Sign up, log in.
+View the list of available CSVs.
+Select one to view its contents rendered as a simple table.
+See updates in real time when the admin uploads or removes CSVs (no manual refresh needed).
+
+💾 Data Storage
+Uploaded CSV files are stored in the local file system.
+File metadata (path, name, size, uploader, upload date) is saved in PostgreSQL.
+User credentials and roles are also stored in PostgreSQL.
+
+💬 Real-Time Requirements
+Use FastAPI WebSockets or Socket.IO to push updates to connected clients.
+When a CSV is uploaded or deleted, emit an event (e.g., "csv_list_updated").
+React clients should listen for these events and update the UI live.
+💡 Bonus / Advanced Features
+Secure JWT storage: Store access tokens using httpOnly cookies or localStorage with refresh logic.
+Clean UI: Use Tailwind, Material UI, or Chakra.
+CSV Visualization: Let users create simple bar or line charts for numeric columns (e.g., with Recharts or Plotly).
+Search or pagination for CSV contents.
+⚙️ Requirements & Expectations
+Keep it simple but functional.
+Clear separation between frontend and backend.
+Readable, maintainable code structure.
+No need for deployment or email verification.
+Focus on correctness, code quality, and architecture.
+
+ 

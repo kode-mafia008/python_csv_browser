@@ -1,0 +1,34 @@
+==========================================
+   CSV Browser - Docker Manager
+==========================================
+
+🚀 START SERVICES
+  1) Start Development (hot-reload)
+  2) Start Production (optimized)
+
+🛑 STOP SERVICES
+  3) Stop All Containers
+  4) Restart Containers
+
+🔧 BUILD & MAINTENANCE
+  5) Rebuild Containers
+  6) Clean All Data (reset)
+
+📊 MONITORING
+  7) View Logs
+  8) Show Container Status
+
+💾 DATABASE
+  9) PostgreSQL Shell
+ 10) Redis Shell
+ 11) Backup Data
+
+📚 HELP
+ 12) View Documentation
+ 13) Show Quick Help
+
+ 14) Exit
+
+==========================================
+
+Enter your choice [1-14]:
